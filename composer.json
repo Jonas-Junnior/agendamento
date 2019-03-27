@@ -1,0 +1,7 @@
+{
+    "require": {
+        "google/apiclient": "2.2",
+        "twilio/sdk": "^5.29",
+        "pagarme/pagarme-php": "^4.0"
+    }
+}
