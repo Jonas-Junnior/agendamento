@@ -38,10 +38,18 @@ header #navbar #sSize{
     display: none;
 }
 
-header #navbar a img{
-    width: 17%;
-    height: 17%;
-    margin-right: 3%;
+header #navbar > a{
+    height: 100%;
+    text-decoration: none;
+}
+
+header #navbar > a p{ 
+    padding-top: 1%;
+    padding-bottom: 0.3%; 
+    padding-right: 9%;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(250, 181, 31);
 }
 
 #navbar span button{
