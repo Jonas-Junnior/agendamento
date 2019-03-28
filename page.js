@@ -10,14 +10,17 @@ function closeNav() {
 }
 
 $(document).ready(function(){
+$("#inputcelular").mask("(99) 99999-9999");
+});
+
+$(document).ready(function(){
+  $("#inputCEP").mask("99999-999");
+  });
+
+$(document).ready(function(){
   $('#form').on('submit', function(){
     $('#inputcelular').removeClass('phone')
     .unmask();
-  })
-})
-
-$(document).ready(function(){
-$("#inputCEP").mask("99999-999");
+  });
 });
-
 
