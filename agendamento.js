@@ -18,7 +18,7 @@ $(document).ready(function(){
 		today: "Hoje",
 		monthsTitle: "Meses",
 		clear: "Limpar",
-		format: "yyyy-mm-dd"
+		format: "dd-mm-yyyy"
 	};
 }(jQuery));
 
