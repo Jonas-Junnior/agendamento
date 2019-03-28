@@ -22,7 +22,6 @@ $(document).ready(function(){
 	};
 }(jQuery));
 
-
 $(document).ready(function(){
 
     var weekday=new Array(7);
