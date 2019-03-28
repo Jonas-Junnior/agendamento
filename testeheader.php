@@ -17,6 +17,7 @@ $horario = $_POST['inputturno'];
 $especialidade = $_POST['inputespecialidade'];
 $especialidadetext = $_POST['inputespecialidade']; 
 //$cep = $_POST['inputCEP'];
+$diadepois = date("Y-m-d", strtotime($dia));
 
 function generateRandomString($length = 6) {
     $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -272,11 +273,11 @@ $event = new Google_Service_Calendar_Event(array(
     'description' => "{$nome} \n \nCelular: {$celular} \nEspecialidade: {$especialidadetext}",
     'start' => array(
       //'dateTime' => '2019-03-18T09:00:00',
-      'dateTime' => "{$dia}T{$horario}",
+      'dateTime' => "{$diadepois}T{$horario}",
       'timeZone' => 'America/Belem',
     ),
     'end' => array(
-      'dateTime' => "{$dia}T{$horariodepois}",
+      'dateTime' => "{$diadepois}T{$horariodepois}",
       'timeZone' => 'America/Belem',
     ),/*
     'recurrence' => array(
@@ -297,5 +298,5 @@ $event = new Google_Service_Calendar_Event(array(
   $calendarId = 'primary';
   $event = $service->events->insert($calendarId, $event);
   //printf('Evento criado: %s', $event->htmlLink);
-  header('Location: http://odonto.com.vc');
+  //header('Location: http://odonto.com.vc');
 ?>

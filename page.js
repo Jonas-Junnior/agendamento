@@ -21,10 +21,3 @@ $("#inputCEP").mask("99999-999");
 });
 
 
-$(document).ready(function(){
-  $('#enviar').on('click', function(){
-    window.alert("Obrigado por se consultar conosco. Iremos lhe enviar um SMS de confirmação. Você será redirecionado para a pagina inicial. Muito Obrigado!")
-
-    window.location.assign("http://odonto.com.vc/index.html");
-  });
-});
