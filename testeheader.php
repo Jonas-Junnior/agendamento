@@ -55,7 +55,7 @@ if($especialidade == "Implantes Dentários"){
 	$especialidade = 72;
 }
 
-/*
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -132,7 +132,7 @@ if ($conn->query($sqlInsContRespCelular) === TRUE) {
 }
 
 $sqlInsContRespEmail = "INSERT INTO contato_respostas(contato_id, questionario_pergunta_id, questionario_resposta_id, resposta, created_at, updated_at, deleted_at)
-VALUES($contatobuscado, 331, NULL, '$email', now(), now(), NULL)";
+VALUES($contatobuscado, 331, NULL, 'Não informado', now(), now(), NULL)";
 if ($conn->query($sqlInsContRespEmail) === TRUE) {
     echo "<br>"."Inserção para a tabela contato_respostas no campo Email, efetuada com sucesso";
 } else {
@@ -140,7 +140,7 @@ if ($conn->query($sqlInsContRespEmail) === TRUE) {
 }
 
 $sqlInsContRespCEP = "INSERT INTO contato_respostas(contato_id, questionario_pergunta_id, questionario_resposta_id, resposta, created_at, updated_at, deleted_at)
-VALUES($contatobuscado, 332, NULL, '$cep', now(), now(), NULL)";
+VALUES($contatobuscado, 332, NULL, 'Não informado', now(), now(), NULL)";
 if ($conn->query($sqlInsContRespCEP) === TRUE) {
     echo "<br>"."Inserção para a tabela contato_respostas no campo CEP, efetuada com sucesso";
 } else {
@@ -298,5 +298,5 @@ $event = new Google_Service_Calendar_Event(array(
   $calendarId = 'primary';
   $event = $service->events->insert($calendarId, $event);
   //printf('Evento criado: %s', $event->htmlLink);
-  //header('Location: http://odonto.com.vc');
+  header('Location: http://odonto.com.vc');
 ?>
