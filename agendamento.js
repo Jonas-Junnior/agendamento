@@ -18,12 +18,22 @@ $(document).ready(function(){
 		today: "Hoje",
 		monthsTitle: "Meses",
 		clear: "Limpar",
-		format: "dd-mm-yyyy"
+        format: "dd/mm/yyyy",
 	};
 }(jQuery));
 
 
 $(document).ready(function(){
+
+    var limite = new Date()
+
+    var time = limite.getHours() + ":" + limite.getMinutes() + ":" + limite.getSeconds();
+
+    limite.setHours(18)
+    limite.setMinutes(00)
+    limite.setSeconds(00)
+
+    var timeTo = limite.getHours() + ":" + limite.getMinutes() + ":" + limite.getSeconds()
 
     var weekday=new Array(7);
     weekday[0]="Monday";
@@ -39,6 +49,17 @@ $(document).ready(function(){
     if($trat == "Implantes Dentários"){
 
         $('#inputdia').datepicker('remove');
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,5,6'
+            });
+        }
+
+        else{
         
         $('#inputdia').datepicker({
             language: "pt-BR",
@@ -47,6 +68,7 @@ $(document).ready(function(){
             daysOfWeekDisabled: '0,5,6',
         });
         
+    }
         $('#inputdia').on('change', function() {
         
             var $date = $('#inputdia').datepicker('getDate');
@@ -70,12 +92,25 @@ $(document).ready(function(){
     else if($trat == "Tratamento Estético"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0,6'
-        });
+
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,6'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,6'
+            });
+        }
 
         $('#inputdia').on('change', function() {
         
@@ -121,12 +156,25 @@ $(document).ready(function(){
     else if($trat == "Tratamento de Canal"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0,5,6'
-        });
+
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,5,6'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,5,6'
+            });
+        }   
 
         $('#inputdia').on('change', function() {
         
@@ -172,12 +220,26 @@ $(document).ready(function(){
     else if($trat == "Tratamento de Gengiva"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0,2,3,4,5'
-        });
+
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,2,3,4,5'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,2,3,4,5'
+            });
+        }
+
         $('#inputdia').on('change', function() {
         
             var $date = $('#inputdia').datepicker('getDate');
@@ -201,12 +263,25 @@ $(document).ready(function(){
     else if($trat == "Aparelho Ortodônico"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0,2,5,6'
-        });
+
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,2,5,6'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,2,5,6'
+            });
+        }
 
         $('#inputdia').on('change', function() {
         
@@ -241,12 +316,25 @@ $(document).ready(function(){
     else if($trat == "Limpeza e Flúor"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0'
-        });
+
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0'
+            });
+        }
 
         $('#inputdia').on('change', function() {
         
@@ -292,12 +380,25 @@ $(document).ready(function(){
     else if($trat == "Extração Dentária"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0,2,6'
-        });
+
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,2,6'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,2,6'
+            });
+        }
 
         $('#inputdia').on('change', function() {
         
@@ -332,12 +433,25 @@ $(document).ready(function(){
     else if($trat == "Harmonia Facial"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0,1,2,5,6'
-        });
+
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,1,2,5,6'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,1,2,5,6'
+            });
+        }
 
         $('#inputdia').on('change', function() {
         
@@ -361,13 +475,25 @@ $(document).ready(function(){
     else if($trat == "Clareamento Dentário"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0,1,3,5,6'
-        });
 
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,1,3,5,6'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,1,3,5,6'
+            });
+        }
         $('#inputdia').on('change', function() {
         
             var $date = $('#inputdia').datepicker('getDate');
@@ -401,12 +527,25 @@ $(document).ready(function(){
     else if($trat == "Pediatria"){
 
         $('#inputdia').datepicker('remove');
-        $('#inputdia').datepicker({
-            language: "pt-BR",
-            startDate: new Date(),
-            todayHighlight: true,
-            daysOfWeekDisabled: '0,1,2,4,5,6'
-        });
+
+        if (time > timeTo){
+
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: '+0d',
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,1,2,4,5,6'
+            });
+        }
+
+        else{
+            $('#inputdia').datepicker({
+                language: "pt-BR",
+                startDate: new Date(),
+                todayHighlight: true,
+                daysOfWeekDisabled: '0,1,2,4,5,6'
+            });
+        }
 
         $('#inputdia').on('change', function() {
         
