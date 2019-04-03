@@ -282,10 +282,10 @@ $event = new Google_Service_Calendar_Event(array(
     ),/*
     'recurrence' => array(
       'RRULE:FREQ=DAILY;COUNT=1'
-    ),*/
+    ),
     'attendees' => array(
       array('email' => 'amaurymagalhaesf@gmail.com')
-    ),
+    ),*/
     'reminders' => array(
       'useDefault' => FALSE,
       'overrides' => array(
