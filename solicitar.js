@@ -565,8 +565,28 @@ $(document).ready(function(){
 
     });
     }
-    else{
+	else{
+			 $('#inputdia').datepicker('remove');
+			if (time > timeTo){
 
-    }
+				$('#inputdia').datepicker({
+					language: "pt-BR",
+					startDate: '+0d',
+					todayHighlight: true,
+					daysOfWeekDisabled: '0,5,6'
+				});
+			}
+
+			else{
+
+				$('#inputdia').datepicker({
+					language: "pt-BR",
+					startDate: new Date(),
+					todayHighlight: true,
+					daysOfWeekDisabled: '0,5,6',
+				});
+
+			}
+		}
 });
 });
