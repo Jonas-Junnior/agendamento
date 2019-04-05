@@ -51,10 +51,10 @@
     </header>
 
     <div class="container" id="formulario">
-        <form id="form" action="testeheader.php" method="post">        
+        <form id="form" action="agendamentodepois.php" method="post">        
         <div class="row">
             <div class="col-lg-12">    
-                <label for="inputnome">Nome Completo*</label> 
+                <label for="inputnome">Nome*</label> 
                 <input class="form-control phone" type="text" name="inputnome" id="inputnome" placeholder="Nome" required><br>
             </div>
         </div>
@@ -87,7 +87,7 @@
 
             <div class="col-lg-6" id="final">
                 <label for="inputdia">Data*</label> 
-                <input class="form-control" name="inputdia" id="inputdia" class="span2" placeholder="dd/mm/aaaa" required>
+                <input class="form-control" name="inputdia" id="inputdia" class="span2" placeholder="dd-mm-aaaa" required>
             </div>
 
             <div class="col-lg-6">
@@ -109,6 +109,20 @@
         <div class="row" style="margin-top: 2em">
             <div class="col-lg-4 col-lg-offset-4">
                 <input class="form-control" type="submit" value="Enviar" id="enviar">
+
+                <div class="modal fade" id="myModal" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content"  style="background: whitesmoke;">
+                        <div class="modal-header">
+                            <img src="Capture.PNG" alt="" style="width: 50%; height: 30%">
+                        </div>
+                        <div class="modal-body" style="color: black"> 
+                            <p>Sua consulta foi agendada. Obrigado por se consultar conosco. <br> Em cinco segundos você será redirecionado para a página principal.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         </form>
