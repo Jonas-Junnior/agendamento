@@ -1,3 +1,4 @@
+<<<<<<< HEAD:solicitar.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,4 +116,137 @@
     </div>
 
 </body>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Solicitar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="agendamento.js"></script>
+    <script src="page.js"></script>
+
+</head>
+<body>
+
+    <div class="sidenav" id="submenu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="file:///C:/Users/User/Documents/Midas/CRM%20job/agendamento/agendamento.html">Marque sua consulta <span class="glyphicon glyphicon-calendar"></span></a>
+            <a href="tel:+559133513998">Ligue (91) 3351-3998</a>
+    </div>
+
+    <header id="header">
+        <nav id="navbar">
+            <button type="button" class="btn btn-default btn-lg" id="btn" onclick="openNav()">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+                Menu
+            </button>
+            <a href="http://odonto.com.vc/index.html"> 
+                <p>Agendamento Online</p> 
+            </a>
+            <span>
+                <button id="gSize">
+                    <a href="https://api.whatsapp.com/send?phone=5591984595577">Whatsapp<i class="fa fa-whatsapp" style="font-size:25px; margin-left: 3px;"></i></a>
+                </button>
+            </span>
+            <span>
+                <button id="sSize">
+                    <a href="https://api.whatsapp.com/send?phone=5591984595577"><i class="fa fa-whatsapp"></i></a>
+                </button>
+            </span>
+        </nav>
+    </header>
+
+    <div class="container" id="formulario">
+        <form id="form" action="agendamentodepois.php" method="post">        
+        <div class="row">
+            <div class="col-lg-12">    
+                <label for="inputnome">Nome*</label> 
+                <input class="form-control phone" type="text" name="inputnome" id="inputnome" placeholder="Nome" required><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="inputcelular">Celular*</label>
+                <input class="form-control" type="tel" name="inputcelular" id="inputcelular" placeholder="(xx)xxxxx-xxxx" required><br>
+            </div>  
+        
+
+            <div class="col-lg-6">
+                <label for="inputespecialidade">Tratamento*</label>
+                    <select class="form-control" autocomplete="off" name="inputespecialidade" id="inputespecialidade" required>
+                        <option value="null" hidden>Escolha um tratamento</option>
+                        <option value="Implantes Dentários">Implantes Dentários</option>
+                        <option value="Tratamento Estético">Tratamento Estético</option>
+                        <option value="Tratamento de Canal">Tratamento de Canal</option>
+                        <option value="Tratamento de Gengiva">Tratamento de Gengiva</option>
+                        <option value="Aparelho Ortodônico">Aparelho Ortodônico</option>
+                        <option value="Limpeza e Flúor">Limpeza e Flúor</option>
+                        <option value="Extração Dentária">Extração Dentária</option>
+                        <option value="Harmonia Facial">Harmonia Facial</option>
+                        <option value="Clareamento Dentário">Clareamento Dentário</option>
+                        <option value="Pediatria">Pediatria</option>
+                        <option value="Outro">Outro</option>
+                    </select><br>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-6" id="final">
+                <label for="inputdia">Data*</label> 
+                <input class="form-control" name="inputdia" id="inputdia" class="span2" placeholder="dd-mm-aaaa" required>
+            </div>
+
+            <div class="col-lg-6">
+                <label for="inputturno">Horário*</label> 
+                <select class="form-control" name="inputturno" id="inputturno" required>
+                    <option selected="selected" hidden>Escolha um horário</option>
+                    <option value="08:00:00" id="08:00:00">8:00</option>
+                    <option value="09:00:00" id="09:00:00">9:00</option>
+                    <option value="10:00:00" id="10:00:00">10:00</option>
+                    <option value="11:00:00" id="11:00:00">11:00</option>
+                    <option value="14:00:00" id="14:00:00">14:00</option>
+                    <option value="15:00:00" id="15:00:00">15:00</option>
+                    <option value="16:00:00" id="16:00:00">16:00</option>
+                    <option value="17:00:00" id="17:00:00">17:00</option>
+                </select><br>
+            </div>
+        </div>    
+        
+        <div class="row" style="margin-top: 2em">
+            <div class="col-lg-4 col-lg-offset-4">
+                <input class="form-control" type="submit" value="Enviar" id="enviar">
+
+                <div class="modal fade" id="myModal" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content"  style="background: whitesmoke;">
+                        <div class="modal-header">
+                            <img src="Capture.PNG" alt="" style="width: 50%; height: 30%">
+                        </div>
+                        <div class="modal-body" style="color: black"> 
+                            <p>Sua consulta foi agendada. Obrigado por se consultar conosco. <br> Em cinco segundos você será redirecionado para a página principal.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </form>
+    </div>
+
+</body>
+>>>>>>> 7e4ca4e11c70f20563b445ab3aaf02533973e672:agendamento.html
 </html>

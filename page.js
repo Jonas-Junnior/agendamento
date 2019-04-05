@@ -10,17 +10,24 @@ function closeNav() {
 }
 
 $(document).ready(function(){
-$("#inputcelular").mask("(99) 99999-9999");
-});
 
-$(document).ready(function(){
+  $("#inputcelular").mask("(99) 99999-9999");
+
+
   $("#inputCEP").mask("99999-999");
+
+
+  $('#enviar').on('click', function(){
+    $('#myModal').modal('show');
   });
 
-$(document).ready(function(){
-  $('#form').on('submit', function(){
-    $('#inputcelular').removeClass('phone')
-    .unmask();
-  });
+    $('#form').submit(function(e){
+      var form = this;
+      e.preventDefault();
+      setTimeout(function () {
+        $('#inputcelular').removeClass('phone')
+        .unmask(); 
+          form.submit();
+      }, 5000); // in milliseconds    
+    });
 });
-
