@@ -177,14 +177,13 @@ if ($conn->query($sqlInsContRespNull3) === TRUE) {
 
 
 $sqlInsAtendimento = "INSERT INTO atendimentos(incorporadora_id,fluxo_id,empreendimento_id,fase_fluxo_id,status_fluxo_id,usuario_id,contato_id, atendimento, created_at, updated_at)
-VALUES(17, $idbuscado, $especialidade, 69, 50, 372, $contatobuscado, 'Agendamento pelo site', now(), now())";
+VALUES(17, $idbuscado, $especialidade, 69, 50, 372, $contatobuscado, 'Agendamento pelo site, no dia {$dia} as {$horario} da especialidade {$especialidadetext}', now(), now())";
 
 if ($conn->query($sqlInsAtendimento) === TRUE) {
     //echo "<br>"."Inserção para a tabela atendimentos, efetuada com sucesso";
 } else {
     //echo "Error: " . $sqlInsAtendimento . "<br>" . $conn->error;
 }
-
 
 
 $conn->close();
