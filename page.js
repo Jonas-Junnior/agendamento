@@ -9,25 +9,23 @@ function closeNav() {
   document.getElementById("btn").style.visibility = "visible";
 }
 
-$(document).ready(function(){
-
+$(document).ready(function() {
   $("#inputcelular").mask("(99) 99999-9999");
-
 
   $("#inputCEP").mask("99999-999");
 
-
-  $('#enviar').on('click', function(){
-    $('#myModal').modal('show');
+  $("#enviar").on("click", function() {
+    $("#myModal").modal("show");
   });
 
-    $('#form').submit(function(e){
-      var form = this;
-      e.preventDefault();
-      setTimeout(function () {
-        $('#inputcelular').removeClass('phone')
-        .unmask(); 
-          form.submit();
-      }, 5000); // in milliseconds    
-    });
+  $("#form").submit(function(e) {
+    var form = this;
+    e.preventDefault();
+    setTimeout(function() {
+      $("#inputcelular")
+        .removeClass("phone")
+        .unmask();
+      form.submit();
+    }, 1000); // in milliseconds
+  });
 });

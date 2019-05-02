@@ -1,6 +1,8 @@
 <?php
  
 require __DIR__ . '/vendor/autoload.php';
+require_once('./vendor/php-rest-api/autoload.php');
+require_once('./configsms.php');
 
 $servername = "estilodevidaurbano.com.br";
 $username = "estil469_crm";
@@ -297,5 +299,19 @@ $event = new Google_Service_Calendar_Event(array(
   $calendarId = 'primary';
   $event = $service->events->insert($calendarId, $event);
   //printf('Evento criado: %s', $event->htmlLink);
+  $smsFacade = new SmsFacade($configSms['alias'], $configSms['password'], $configSms['webServiceUrl']);
+  $smsMessage = "Olá $nome, o seu horário de $horario no dia $dia para $especialidadetext está agendado.";
+
+  $sms = new Sms();
+  $sms->setTo("55$celular");
+  $sms->setMsg($smsMessage);
+  $sms->setId(uniqid());
+  $sms->setCallbackOption(Sms::CALLBACK_NONE);
+
+  try{
+    $response = $smsFacade->send($sms);
+  } catch(Exception $ex){
+    echo "Falha ao fazer o envio da mensagem. Exceção: ".$ex->getMessage()."<br />".$ex->getTraceAsString();
+  }
   header('Location: http://odonto.com.vc');
 ?>
