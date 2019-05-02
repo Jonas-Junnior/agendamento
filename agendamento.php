@@ -300,7 +300,7 @@ $event = new Google_Service_Calendar_Event(array(
   $event = $service->events->insert($calendarId, $event);
   //printf('Evento criado: %s', $event->htmlLink);
   $smsFacade = new SmsFacade($configSms['alias'], $configSms['password'], $configSms['webServiceUrl']);
-  $smsMessage = "Olá $nome, o seu horário de $horario no dia $dia para $especialidadetext está agendado.";
+  $smsMessage = "Oi, sou a robô da Odonto.com.vc, nós recebemos seu agendamento, $nome, o seu horário de $horario no dia $dia para $especialidadetext está agendado.";
 
   $sms = new Sms();
   $sms->setTo("55$celular");
