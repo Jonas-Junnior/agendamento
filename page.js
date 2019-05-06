@@ -26,6 +26,6 @@ $(document).ready(function() {
         .removeClass("phone")
         .unmask();
       form.submit();
-    }, 1000); // in milliseconds
+    }, 5000); // in milliseconds
   });
 });
