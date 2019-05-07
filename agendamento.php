@@ -304,7 +304,6 @@ $event = new Google_Service_Calendar_Event(array(
   $smsFacade = new SmsFacade($configSms['alias'], $configSms['password'], $configSms['webServiceUrl']);
   $smsMessage = "Oi, sou o robô da odonto com vc, seu horário $horario no dia $dia está agendado, apresente esse sms e ganhe 10% de desconto no seu tratamento. ATENÇÃO O desconto só é válido se você não falta a esta consulta.";
 
-
   $sms = new Sms();
   $sms->setTo("55$celular");
   $sms->setMsg($smsMessage);
