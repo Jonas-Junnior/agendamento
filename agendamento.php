@@ -19,6 +19,7 @@ $horario = $_POST['inputturno'];
 $especialidade = $_POST['inputespecialidade'];
 $especialidadetext = $_POST['inputespecialidade']; 
 //$cep = $_POST['inputCEP'];
+date_default_timezone_set('America/Sao_Paulo');
 $diadepois = date("Y-m-d", strtotime($dia));
 
 function generateRandomString($length = 6) {
@@ -300,20 +301,34 @@ $event = new Google_Service_Calendar_Event(array(
   $event = $service->events->insert($calendarId, $event);
   //printf('Evento criado: %s', $event->htmlLink);
 
+  $smsList = array();
   
   $smsFacade = new SmsFacade($configSms['alias'], $configSms['password'], $configSms['webServiceUrl']);
-  $smsMessage = "Oi, sou o robô da odonto com vc, seu horário $horario no dia $dia está agendado, apresente esse sms e ganhe 10% de desconto no seu tratamento. ATENÇÃO O desconto só é válido se você não falta a esta consulta.";
+  $smsMessage1 = "Oi, sou o robô da Odonto Com Vc: seu horário $horario no dia $dia está agendado.";
 
   $sms = new Sms();
   $sms->setTo("55$celular");
-  $sms->setMsg($smsMessage);
+  $sms->setMsg($smsMessage1);
   $sms->setId(uniqid());
   $sms->setCallbackOption(Sms::CALLBACK_NONE);
 
-  try{
-    $response = $smsFacade->send($sms);
-  } catch(Exception $ex){
-    echo "Falha ao fazer o envio da mensagem. Exceção: ".$ex->getMessage()."<br />".$ex->getTraceAsString();
+  array_push($smsList, $sms);
+
+  $smsMessage2 = "Apresente esse sms e ganhe 10% de desconto no seu tratamento. ATENÇÃO O desconto só é válido se você não faltar a esta consulta.";
+
+  $sms2 = new Sms();
+  $sms2->setTo("55$celular");
+  $sms2->setMsg($smsMessage2);
+  $sms2->setId(uniqid());
+  $sms2->setCallbackOption(Sms::CALLBACK_NONE);
+
+  array_push($smsList, $sms2);
+
+  try {
+      $responseList = $smsFacade->sendMultiple($smsList);
+  } catch (Exception $ex) {
+      echo "Falha ao fazer o envio das mensagens. Exceção: " . $ex->getMessage() . "<br />" . $ex->getTraceAsString();
   }
-  header('Location: http://odonto.com.vc');
+
+  header('Location: http://onova.com.br');
 ?>
