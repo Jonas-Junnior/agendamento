@@ -315,5 +315,5 @@ $event = new Google_Service_Calendar_Event(array(
   } catch(Exception $ex){
     echo "Falha ao fazer o envio da mensagem. Exceção: ".$ex->getMessage()."<br />".$ex->getTraceAsString();
   }
-  header('Location: http://odonto.com.vc');
+  header('Location: http://odontocomvc.com/');
 ?>
