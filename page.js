@@ -18,14 +18,24 @@ $(document).ready(function() {
     $("#myModal").modal("show");
   });
 
+  $("#modal-btn-close").click(function() {
+    $("#myModal").modal("hide");
+    location.reload(true);
+  });
+
   $("#form").submit(function(e) {
-    var form = this;
     e.preventDefault();
-    setTimeout(function() {
-      $("#inputcelular")
-        .removeClass("phone")
-        .unmask();
-      form.submit();
-    }, 5000); // in milliseconds
+    $("#inputcelular")
+      .removeClass("phone")
+      .unmask();
+
+    var post_data = $("#form").serialize();
+    $.ajax({
+      type: "POST",
+      url: "agendamento.php",
+      data: post_data
+    }).done(function(res) {
+      // console.log(res);
+    }); // in milliseconds
   });
 });

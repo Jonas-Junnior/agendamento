@@ -9,7 +9,6 @@ $username = "estil469_crm";
 $password = "hsy6Fs3S9Kj";
 $dbname = "estil469_crm";
 
-
 //vars do forms
 $nome = $_POST['inputnome'];
 //$email = $_POST['inputemail'];
