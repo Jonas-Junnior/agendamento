@@ -6,9 +6,9 @@ require_once('./configsms.php');
 $jsonResponse = file_get_contents('php://input');
 $content = json_decode($jsonResponse, true);
 
-$smsFacade = new SmsFacade($configs['alias'], $configs['password'], $configs['webServiceUrl']);
-
 try {
+    $smsFacade = new SmsFacade($configs['alias'], $configs['password'], $configs['webServiceUrl']);
+    
     $data = $content['callbackMoRequest'];
 
     $mobile = $data['mobile'];
